@@ -1,0 +1,11 @@
+[package]
+name = "utest-cortex-m-qemu"
+version = "0.1.0"
+authors = ["Jorge Aparicio <japaricious@gmail.com>"]
+
+[dependencies]
+sc = "0.2.0"
+
+[dependencies.compiler_builtins]
+features = ["mem"]
+git = "https://github.com/rust-lang-nursery/compiler-builtins"
