@@ -9,3 +9,8 @@ sc = "0.2.0"
 [dependencies.compiler_builtins]
 features = ["mem"]
 git = "https://github.com/rust-lang-nursery/compiler-builtins"
+optional = true
+
+[features]
+compiler-builtins = ["compiler_builtins"]
+default = ["compiler-builtins"]

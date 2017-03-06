@@ -1,8 +1,9 @@
-#![feature(compiler_builtins_lib)]
+#![cfg_attr(feature = "compiler-builtins", feature(compiler_builtins_lib))]
 #![feature(core_intrinsics)]
 #![feature(lang_items)]
 #![no_std]
 
+#[cfg(feature = "compiler-builtins")]
 extern crate compiler_builtins;
 #[macro_use]
 extern crate sc;
