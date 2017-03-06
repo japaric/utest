@@ -132,14 +132,14 @@ git = "https://github.com/japaric/utest"
 ``` rust
 // test runner
 #[cfg(all(target_arch = "arm",
-          not(all(target_env = "gnu", target_env = "musl")),
+          not(any(target_env = "gnu", target_env = "musl")),
           target_os = "linux",
           test))]
 extern crate utest_cortex_m_qemu;
 
 // overrides `panic!`
 #[cfg(all(target_arch = "arm",
-          not(all(target_env = "gnu", target_env = "musl")),
+          not(any(target_env = "gnu", target_env = "musl")),
           target_os = "linux",
           test))]
 #[macro_use]
@@ -335,12 +335,12 @@ git = "https://github.com/japaric/utest"
 
 ``` rust
 #[cfg(all(target_arch = "arm",
-          not(all(target_env = "gnu", target_env = "musl"))))]
+          not(any(target_env = "gnu", target_env = "musl"))))]
 #[macro_use]
 extern crate utest_macros;
 
 #[cfg(all(target_arch = "arm",
-          not(all(target_env = "gnu", target_env = "musl"))))]
+          not(any(target_env = "gnu", target_env = "musl"))))]
 extern crate utest_cortex_m_semihosting;
 ```
 
