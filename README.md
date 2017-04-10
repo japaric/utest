@@ -144,6 +144,16 @@ extern crate utest_cortex_m_qemu;
           test))]
 #[macro_use]
 extern crate utest_macros;
+
+#[cfg(all(target_arch = "arm",
+          not(any(target_env = "gnu", target_env = "musl")),
+          target_os = "linux",
+          test))]
+macro_rules! panic {
+    ($($tt:tt)*) => {
+        upanic!($($tt)*);
+    };
+}
 ```
 
 3) Create the target specification file.
@@ -342,6 +352,16 @@ extern crate utest_macros;
 #[cfg(all(target_arch = "arm",
           not(any(target_env = "gnu", target_env = "musl"))))]
 extern crate utest_cortex_m_semihosting;
+
+#[cfg(all(target_arch = "arm",
+          not(any(target_env = "gnu", target_env = "musl")),
+          target_os = "linux",
+          test))]
+macro_rules! panic {
+    ($($tt:tt)*) => {
+        upanic!($($tt)*);
+    };
+}
 ```
 
 3) If required (this is required for `cortex-m-template` based crates), define

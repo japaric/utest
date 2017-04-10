@@ -1,12 +1,12 @@
 #![no_std]
 
 #[macro_export]
-macro_rules! panic {
+macro_rules! upanic {
     () => (
-        panic!("explicit panic")
+        upanic!("explicit panic")
     );
     ($fmt:expr) => ({
-        panic!($fmt,)
+        upanic!($fmt,)
     });
     ($fmt:expr, $($arg:tt)*) => ({
         #[allow(improper_ctypes)]
