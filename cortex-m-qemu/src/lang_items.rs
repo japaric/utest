@@ -23,6 +23,7 @@ impl Termination for () {
 
 
 #[lang = "panic_fmt"]
+#[no_mangle]
 unsafe extern "C" fn panic_fmt(args: ::core::fmt::Arguments,
                                file: &'static str,
                                line: u32)
