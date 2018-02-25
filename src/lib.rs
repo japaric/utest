@@ -50,6 +50,20 @@ pub fn test_main_static(tests: &[TestDescAndFn]) {
     }
 }
 
+pub trait Termination {
+    fn report(self) -> i32;
+}
+
+impl Termination for () {
+    fn report(self) -> i32 {
+        0
+    }
+}
+
+pub fn assert_test_result<T: Termination>(result: T) {
+    assert_eq!(result.report(), 0);
+}
+
 // required for compatibility with the `rustc --test` interface
 pub struct TestDescAndFn {
     pub desc: TestDesc,
