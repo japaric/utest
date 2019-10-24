@@ -6,7 +6,7 @@
 #[no_mangle]
 pub static mut __TEST_PANICKED: bool = false;
 
-pub fn test_main_static(tests: &[TestDescAndFn]) {
+pub fn test_main_static(tests: &[&TestDescAndFn]) {
     #[allow(improper_ctypes)]
     extern "Rust" {
         fn __test_before_run(name: &str);
