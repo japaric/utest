@@ -75,6 +75,7 @@ pub struct TestDesc {
     pub ignore: bool,
     pub name: StaticTestName,
     pub should_panic: ShouldPanic,
+    pub test_type: TestType,
 }
 
 pub struct StaticTestName(pub &'static str);
@@ -84,4 +85,12 @@ pub struct StaticTestFn(pub fn());
 pub enum ShouldPanic {
     No,
     Yes,
+}
+
+#[derive(Copy, Clone, Debug, PartialEq, Eq, Hash)]
+pub enum TestType {
+    UnitTest,
+    IntegrationTest,
+    DocTest,
+    Unknown,
 }
