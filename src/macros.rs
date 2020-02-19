@@ -1,12 +1,12 @@
-#![no_std]
+//! Macros for Ztest
 
 #[macro_export]
-macro_rules! upanic {
+macro_rules! zpanic {
     () => (
-        upanic!("explicit panic")
+        zpanic!("explicit panic")
     );
     ($fmt:expr) => ({
-        upanic!($fmt,)
+        zpanic!($fmt,)
     });
     ($fmt:expr, $($arg:tt)*) => ({
         #[allow(improper_ctypes)]

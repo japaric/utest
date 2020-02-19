@@ -1,6 +1,0 @@
-[package]
-name = "utest-macros"
-version = "0.1.0"
-authors = ["Jorge Aparicio <japaricious@gmail.com>"]
-
-[dependencies]

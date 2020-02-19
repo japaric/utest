@@ -1,7 +1,0 @@
-[package]
-name = "utest-cortex-m-semihosting"
-version = "0.1.0"
-authors = ["Jorge Aparicio <japaricious@gmail.com>"]
-
-[dependencies]
-cortex-m-semihosting = "0.1.3"

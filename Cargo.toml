@@ -10,3 +10,5 @@ name = "ztest"
 path = "src/ztest.rs"
 
 [dependencies]
+ztest-qemu = { path = "ztest-qemu", version = "0.1.0" }
+ztest-semihosting = { path = "ztest-semihosting", version = "0.1.0" }

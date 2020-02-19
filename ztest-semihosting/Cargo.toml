@@ -1,0 +1,7 @@
+[package]
+name = "ztest-semihosting"
+version = "0.1.0"
+authors = ["Malachi Austin <karrighan@protonmail.com>"]
+
+[dependencies]
+cortex-m-semihosting = "*"
