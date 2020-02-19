@@ -1,6 +1,12 @@
 [package]
-name = "test"
+name = "ztest"
+description = "Custom testing framework for no_std projects"
+categories = ["test", "zesty", "orion"]
 version = "0.1.0"
-authors = ["Jorge Aparicio <jorge@japaric.io>"]
+authors = ["Malachi Austin <karrighan@protonmail.com>"]
+
+[lib]
+name = "ztest"
+path = "src/ztest.rs"
 
 [dependencies]
