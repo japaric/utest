@@ -1,4 +1,4 @@
-# `μtest`
+# `ztest`
 
 > Unit `#[test]`ing for microcontrollers and other `no_std` systems
 
@@ -113,14 +113,14 @@ fn should_panic() {
 1) Append this to your crate's Cargo.toml
 
 ``` toml
-[target.thumbv7m-linux-eabi.dev-dependencies.utest-macros]
-git = "https://github.com/japaric/utest"
+[target.thumbv7m-none-eabihf.dev-dependencies.ztest-semihosting]
+git = "https://github.com/Karrighan/ztest"
 
-[target.thumbv7m-linux-eabi.dev-dependencies.test]
-git = "https://github.com/japaric/utest"
+[target.thumbv7m-none-eabihf.dev-dependencies.ztest]
+git = "https://github.com/Karrighan/ztest"
 
-[target.thumbv7m-linux-eabi.dev-dependencies.utest-cortex-m-qemu]
-git = "https://github.com/japaric/utest"
+[target.thumbv7m-none-eabihf.dev-dependencies.ztest-qemu]
+git = "https://github.com/Karrighan/ztest"
 ```
 
 **NOTE** Change `thumbv7m-linux-eabi` as necessary. The other options are
