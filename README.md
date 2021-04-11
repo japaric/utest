@@ -1,3 +1,9 @@
+(2021-04-11) Hey, I don't recommend this approach for testing `no_std` code as it relies on unstable details about the Rust compiler and the standard library so it's prone to breakage. For a stable approach you can use a custom Cargo runner and a procedural macro as it's done in the [`defmt-test`](https://github.com/knurling-rs/defmt/tree/704bee6ebfa153aad9dba1fcee5ba0ec6b77f3a8/firmware/defmt-test) crate.
+
+If you'd like to know more about testing embedded Rust firmware in general I recommend this [series of blog posts](https://ferrous-systems.com/blog/tags/embedded-rust-testing/).
+
+---
+
 # `μtest`
 
 > Unit `#[test]`ing for microcontrollers and other `no_std` systems
