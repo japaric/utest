@@ -6,7 +6,7 @@
 #[no_mangle]
 pub static mut __TEST_PANICKED: bool = false;
 
-pub fn test_main_static(tests: &[TestDescAndFn]) {
+pub fn test_main_static(tests: &[&TestDescAndFn]) {
     #[allow(improper_ctypes)]
     extern "Rust" {
         fn __test_before_run(name: &str);
@@ -75,6 +75,7 @@ pub struct TestDesc {
     pub ignore: bool,
     pub name: StaticTestName,
     pub should_panic: ShouldPanic,
+    pub test_type: TestType,
 }
 
 pub struct StaticTestName(pub &'static str);
@@ -84,4 +85,12 @@ pub struct StaticTestFn(pub fn());
 pub enum ShouldPanic {
     No,
     Yes,
+}
+
+#[derive(Copy, Clone, Debug, PartialEq, Eq, Hash)]
+pub enum TestType {
+    UnitTest,
+    IntegrationTest,
+    DocTest,
+    Unknown,
 }
